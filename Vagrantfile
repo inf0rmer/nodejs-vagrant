@@ -2,19 +2,18 @@ require "rubygems"
 require "json"   
 
 Vagrant::Config.run do |config|   
-  config.vm.box         = "lucid32"
+  config.vm.box = "ubuntu-1110-server-amd64"
   
   config.vm.provision :chef_solo do |chef|   
     chef.cookbooks_path = "cookbooks"
-    chef.add_recipe("vagrant_main")  
-    chef.add_recipe("nginx") 
-    chef.add_recipe("apt") 
-    chef.add_recipe("git")   
-    chef.add_recipe("ruby") 
-    chef.add_recipe("gems") 
-    chef.add_recipe("nodejs") 
-    chef.add_recipe("mongodb")  
-    chef.add_recipe("rabbitmq")  
+    chef.add_recipe("vagrant_main")
+    chef.add_recipe("build-essential")
+    chef.add_recipe("nginx")
+    chef.add_recipe("apt")
+    chef.add_recipe("git")
+    chef.add_recipe("nodejs::npm")
+    chef.add_recipe("mongodb")
+    chef.add_recipe("redis")
     chef.json.merge!(JSON.parse(File.read('dna.json')))
   end        
   

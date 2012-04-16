@@ -1,3 +1,6 @@
 [submodule "cookbooks/nodejs"]
 	path = cookbooks/nodejs
 	url = https://github.com/starfish-prime/nodejs-cookbook
+[submodule "cookbooks/redis"]
+	path = cookbooks/redis
+	url = git://github.com/ctrabold/chef-redis.git

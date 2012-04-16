@@ -1,21 +1,13 @@
 {
-  "gems": [
-    { "name": "rake" }
-  ],
   "node_modules":[
+  	"less",
     "coffee-script"
-  ],  
-  "rabbitmq_plugins":[
-    "rabbitmq_management",
-    "rabbitmq_management_visualiser"
-  ],  
+  ],
   "run_list": [ 
    "recipe[apt]",
    "recipe[nginx]",
-   "recipe[monit]", 
-   "recipe[gems]", 
-   "recipe[nodejs]", 
-   "recipe[rabbitmq]", 
-   "recipe[mongodb]"  
+   "recipe[nodejs]",
+   "recipe[mongodb]",
+   "recipe[redis]"
  ] 
 }
